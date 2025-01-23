@@ -7,16 +7,13 @@ import styled from "styled-components";
 
 export const Home = () => {
     return (
-        <>
-         <Container>
-             <Header/>
-         </Container>
-
-         <MainContainer>
-             <Navbar/>
-             <Profile/>
-         </MainContainer>
-        </>
+        <Container>
+            <Header/>
+            <MainContainer>
+                <Navbar/>
+                <Profile/>
+            </MainContainer>
+        </Container>
     );
 };
 
@@ -24,11 +21,12 @@ const Container = styled.div`
     max-width: 1100px;
     padding: 0 10px;
     margin: 0 auto;
+    
+    height: calc(100vh - 85px);
 `
 
-const MainContainer = styled(Container)`
-    outline: 1px solid red;
-    
+const MainContainer = styled.main`
+    height: 100%;
     display: grid;
     grid-template-columns: 2fr 10fr;
     gap: 10px;
