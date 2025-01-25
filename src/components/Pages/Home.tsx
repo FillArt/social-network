@@ -26,7 +26,6 @@ const Container = styled.div`
 `
 
 const MainContainer = styled.main`
-    height: 100%;
     display: grid;
     grid-template-columns: 2fr 10fr;
     gap: 10px;
