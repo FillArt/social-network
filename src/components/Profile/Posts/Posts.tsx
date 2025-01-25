@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from "styled-components";
 import {Post} from "./Post";
+import {Button} from "../../Base/Button/Button";
 
 export const Posts = () => {
     return (
@@ -8,7 +9,7 @@ export const Posts = () => {
             <h2>My Posts</h2>
             <PostsControl>
                 <textarea name="" placeholder="your news..." id="" />
-                <button>Send</button>
+                <Button name='Send' style='send' onClick={() => alert('Send')} />
             </PostsControl>
             <PostsList>
                 <Post/>
@@ -19,9 +20,7 @@ export const Posts = () => {
     );
 };
 
-const PostsContainer = styled.div`
-
-`
+const PostsContainer = styled.div``
 
 const PostsControl = styled.div`
     display: flex;
@@ -35,13 +34,6 @@ const PostsControl = styled.div`
         box-sizing: border-box;
         padding: 20px;
         border: none;
-    }
-    button {
-        cursor: pointer;
-        border: none;
-        background: green;
-        color: white;
-        padding: 10px 20px;
     }
 `
 
