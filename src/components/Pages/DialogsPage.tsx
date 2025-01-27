@@ -1,16 +1,16 @@
 import React from 'react';
 import {Header} from "../Layout/Header/Header";
 import {Navbar} from "../Layout/Navbar/Navbar";
-import {Profile} from "../Profile/Profile";
-import {Container, MainContainer} from "./Home";
+import {Container, MainContainer} from "./HomePage";
+import {Dialogs} from "../Dialogs/Dialogs"
 
-export const Dialogs = () => {
+export const DialogsPage = () => {
     return (
         <Container>
             <Header/>
             <MainContainer>
                 <Navbar/>
-                <h1>Dialog</h1>
+                <Dialogs/>
             </MainContainer>
         </Container>
     );
