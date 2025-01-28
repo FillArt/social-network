@@ -32,6 +32,7 @@ export const Navbar = () => {
 };
 
 const NavContainer = styled.article`
+    min-height: calc(100vh - 105px);
     background: darkslategrey;
     color: white;
     padding: 10px 15px;
