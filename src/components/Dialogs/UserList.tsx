@@ -24,8 +24,11 @@ export const UserList = () => {
 };
 
 const List = styled.ul`
-    padding: 0;
+    padding: 10px;
+    box-sizing: border-box;
     margin: 0;
+    min-height: calc(100vh - 145px);
+    background: #282c34;
     
     li {
         list-style: none;
@@ -37,7 +40,7 @@ const List = styled.ul`
     
     a {
         text-decoration: none;
-        font-size: 25px;
-        color: darkslategrey;
+        font-size: 20px;
+        color: white;
     }
 `
