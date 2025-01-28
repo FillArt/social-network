@@ -5,7 +5,7 @@ import {Header} from "../Layout/Header/Header";
 
 import styled from "styled-components";
 
-export const Home = () => {
+export const HomePage = () => {
     return (
         <Container>
             <Header/>
@@ -17,7 +17,7 @@ export const Home = () => {
     );
 };
 
-const Container = styled.div`
+export const Container = styled.div`
     max-width: 1100px;
     padding: 0 10px;
     margin: 0 auto;
@@ -25,7 +25,7 @@ const Container = styled.div`
     height: calc(100vh - 85px);
 `
 
-const MainContainer = styled.main`
+export const MainContainer = styled.main`
     display: grid;
     grid-template-columns: 2fr 10fr;
     gap: 10px;
