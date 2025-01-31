@@ -8,6 +8,7 @@ import {PostType} from "../../App";
 
 type HomePageProps = {
     data: PostType[]
+    addPost: (post: PostType) => void;
 }
 
 export const HomePage = (props :HomePageProps) => {
@@ -16,7 +17,7 @@ export const HomePage = (props :HomePageProps) => {
             <Header/>
             <MainContainer>
                 <Navbar/>
-                <Profile posts={props.data}/>
+                <Profile posts={props.data} addPost={props.addPost} />
             </MainContainer>
         </Container>
     );

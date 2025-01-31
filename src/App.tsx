@@ -12,17 +12,16 @@ export type PostType = {
 }
 
 function App() {
-    const [statePosts, setStatePosts] = useState<PostType[]>([
-        {id: 1, message: 'Hello!', likesCount: 12},
-        {id: 2, message: 'World!', likesCount: 21},
-        {id: 3, message: 'Testing', likesCount: 34},
-        {id: 4, message: 'Data', likesCount: 2}
-    ])
+    const [statePosts, setStatePosts] = useState<PostType[]>([])
+
+    const addPost = (post: PostType) => {
+        setStatePosts([post, ...statePosts])
+    }
 
   return (
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<HomePage data={statePosts} />} />
+          <Route path="/" element={<HomePage data={statePosts} addPost={addPost} />} />
           <Route path="/dialogs" element={<DialogsPage />} />
           <Route path="/*" element={<Error404 />} />
         </Routes>

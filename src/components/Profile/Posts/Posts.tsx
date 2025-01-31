@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {ChangeEvent, useState} from 'react';
 import styled from "styled-components";
 import {Button} from "../../Base/Button/Button";
 import {PostType} from "../../../App";
@@ -7,15 +7,33 @@ import {Post} from "./Post";
 
 type PostsProps = {
     data: PostType[];
+    addPost: (post: PostType) => void;
 }
 
-export const Posts = ({data} :PostsProps) => {
+export const Posts = ({data, addPost} :PostsProps) => {
+
+    const [localValue, setLocalValue] = useState<string>('');
+
+    const onChangeHandler = (e: ChangeEvent<HTMLTextAreaElement>) => {
+        setLocalValue(e.currentTarget.value);
+    }
+
+    const onClickHandler = () => {
+        const newItem: PostType = {
+            id: 1223,
+            message: localValue,
+            likesCount: 0
+        }
+        addPost(newItem)
+        setLocalValue('')
+    }
+
     return (
         <PostsContainer>
             <h2>My Posts</h2>
             <PostsControl>
-                <textarea name="" placeholder="your news..." id="" />
-                <Button name='Send' style='send' onClick={() => alert('Send')} />
+                <textarea name="" value={localValue} onChange={(e) => onChangeHandler(e)} placeholder="your news..." id="" />
+                <Button name='Send' style='send' onClick={() => onClickHandler()} />
             </PostsControl>
             <PostsList>
                 {data.map((post: PostType) => {

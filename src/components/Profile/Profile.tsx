@@ -7,7 +7,8 @@ import {Posts} from "./Posts/Posts";
 import {PostType} from "../../App";
 
 type ProfileProps = {
-    posts: PostType[]
+    posts: PostType[],
+    addPost: (post: PostType) => void;
 }
 
 export const Profile = (props: ProfileProps) => {
@@ -15,7 +16,7 @@ export const Profile = (props: ProfileProps) => {
         <ProfileContainer>
             <Banner />
             <Info />
-            <Posts data={props.posts} />
+            <Posts data={props.posts} addPost={props.addPost} />
         </ProfileContainer>
     );
 };
