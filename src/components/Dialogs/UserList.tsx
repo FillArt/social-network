@@ -1,24 +1,22 @@
 import React from 'react';
 import styled from "styled-components";
+import {DialogType} from "../../App";
 
-export const UserList = () => {
+type UserListProps = {
+    users: DialogType[]
+}
+
+export const UserList = ({users}: UserListProps) => {
     return (
         <List>
-            <li>
-                <a href="">Artiom</a>
-            </li>
-            <li>
-                <a href="">Elissa</a>
-            </li>
-            <li>
-                <a href="">Vlad</a>
-            </li>
-            <li>
-                <a href="">Max</a>
-            </li>
-            <li>
-                <a href="">Dima</a>
-            </li>
+
+            {users.map(user => {
+                return (
+                    <li key={user.id}>
+                        <a href="">{user.name}</a>
+                    </li>
+                )
+            })}
         </List>
     );
 };

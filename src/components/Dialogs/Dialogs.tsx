@@ -2,13 +2,19 @@ import React from 'react';
 import styled from "styled-components";
 import {UserList} from "./UserList";
 import {MessagesList} from "./Messages/MessagesList";
+import {DialogType} from "../../App";
 
-export const Dialogs = () => {
+
+type DialogProps = {
+    data: DialogType[];
+}
+
+export const Dialogs = (props: DialogProps) => {
     return (
         <DialogsContainer>
             <h2>Dialogs</h2>
             <DialogsFlex>
-                <UserList/>
+                <UserList users={props.data} />
                 <MessagesList/>
             </DialogsFlex>
         </DialogsContainer>
