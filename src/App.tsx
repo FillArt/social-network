@@ -6,7 +6,7 @@ import {DialogsPage} from "./components/Pages/DialogsPage";
 import {Error404} from "./components/Pages/Error404";
 
 export type PostType = {
-    id: number,
+    id: string,
     message: string,
     likesCount: number,
 }

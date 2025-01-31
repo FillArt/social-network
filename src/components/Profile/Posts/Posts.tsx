@@ -3,6 +3,7 @@ import styled from "styled-components";
 import {Button} from "../../Base/Button/Button";
 import {PostType} from "../../../App";
 import {Post} from "./Post";
+import {v1} from "uuid";
 
 
 type PostsProps = {
@@ -20,7 +21,7 @@ export const Posts = ({data, addPost} :PostsProps) => {
 
     const onClickHandler = () => {
         const newItem: PostType = {
-            id: 1223,
+            id: v1(),
             message: localValue,
             likesCount: 0
         }
