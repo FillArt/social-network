@@ -2,11 +2,12 @@ import React from 'react';
 import styled from "styled-components";
 import {UserList} from "./UserList";
 import {MessagesList} from "./Messages/MessagesList";
-import {DialogType} from "../../App";
+import {DialogType, MessageType} from "../../App";
 
 
 type DialogProps = {
     data: DialogType[];
+    messages: MessageType[];
 }
 
 export const Dialogs = (props: DialogProps) => {
@@ -15,7 +16,7 @@ export const Dialogs = (props: DialogProps) => {
             <h2>Dialogs</h2>
             <DialogsFlex>
                 <UserList users={props.data} />
-                <MessagesList/>
+                <MessagesList messages={props.messages} />
             </DialogsFlex>
         </DialogsContainer>
     );

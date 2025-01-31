@@ -17,6 +17,13 @@ export type DialogType = {
     name: string,
 }
 
+export type MessageType = {
+    id: string,
+    message: string,
+    author: string,
+    myMessage: boolean
+}
+
 function App() {
     const [posts, setPosts] = useState<PostType[]>([])
     const [dialogs] = useState<DialogType[]>([
@@ -25,6 +32,28 @@ function App() {
         {id: v1(), name: 'Vlad'},
         {id: v1(), name: 'Dima'},
         {id: v1(), name: 'Max'}
+    ])
+    const [messages] = useState<MessageType[]>([
+        {
+            id: v1(),
+            message: 'Hello Man',
+            author:'Author',
+            myMessage: true
+        },
+
+        {
+            id: v1(),
+            message: 'How are you?',
+            author:'Author',
+            myMessage: true
+        },
+
+        {
+            id: v1(),
+            message: 'Here is a placeholder for dialogues I wrote',
+            author:'Friend',
+            myMessage: false
+        },
     ])
 
     const addPost = (post: PostType) => {
@@ -35,7 +64,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<HomePage data={posts} addPost={addPost} />} />
-          <Route path="/dialogs" element={<DialogsPage data={dialogs} />} />
+          <Route path="/dialogs" element={<DialogsPage data={dialogs} messages={messages} />} />
           <Route path="/*" element={<Error404 />} />
         </Routes>
       </BrowserRouter>

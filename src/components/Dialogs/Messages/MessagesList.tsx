@@ -1,14 +1,22 @@
 import React from 'react';
 import {Message} from "./Message";
 import styled from "styled-components";
+import {MessageType} from "../../../App";
 
-export const MessagesList = () => {
+type MessagesListProps = {
+    messages: MessageType[];
+}
+
+export const MessagesList = ({messages}: MessagesListProps) => {
     return (
         <Container>
-            <Message myTemp={false}/>
-            <Message myTemp={false}/>
-            <Message myTemp={true}/>
-            <Message myTemp={false}/>
+
+            {messages.map(message => {
+                return (
+                    <Message message={message} key={message.id} />
+                )
+            })}
+
         </Container>
     );
 };
