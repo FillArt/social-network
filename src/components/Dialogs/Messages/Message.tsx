@@ -1,21 +1,22 @@
 import React, {useState} from 'react';
 import styled from "styled-components";
+import {MessageType} from "../../../App";
 
 type MessageProps = {
-    myTemp: boolean
+    message: MessageType;
 }
 
-export const Message = ({myTemp}: MessageProps) => {
+export const Message = ({message}: MessageProps) => {
 
     return (
-        <MessageBlock myMessage={myTemp}>
+        <MessageBlock myMessage={message.myMessage}>
             <Avatar>
                 <img src="" alt=""/>
-                <span>Name</span>
+                <span>{message.author}</span>
             </Avatar>
 
             <MessageText>
-                <p>Hello World!</p>
+                <p>{message.message}</p>
             </MessageText>
         </MessageBlock>
     );

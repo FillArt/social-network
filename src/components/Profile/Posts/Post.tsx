@@ -1,14 +1,19 @@
 import React from 'react';
 import styled from "styled-components";
+import {PostType} from "../../../App";
 
-export const Post = () => {
+type PostItemProps = {
+    post: PostType;
+}
+
+export const Post = ({ post }: PostItemProps) => {
     return (
         <PostContainer>
             <PostAvatar>
                 <img src="" alt=""/>
             </PostAvatar>
             <PostContent>
-                <p>Lorem ipsum ....</p>
+                <p>{post.message} <br /> Likes: {post.likesCount}</p>
             </PostContent>
         </PostContainer>
     );
