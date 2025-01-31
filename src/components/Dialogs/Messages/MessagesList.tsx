@@ -5,7 +5,6 @@ import styled from "styled-components";
 export const MessagesList = () => {
     return (
         <Container>
-
             <Message myTemp={false}/>
             <Message myTemp={false}/>
             <Message myTemp={true}/>

@@ -1,9 +1,15 @@
 import React from 'react';
 import styled from "styled-components";
-import {Post} from "./Post";
 import {Button} from "../../Base/Button/Button";
+import {PostType} from "../../../App";
+import {Post} from "./Post";
 
-export const Posts = () => {
+
+type PostsProps = {
+    data: PostType[];
+}
+
+export const Posts = ({data} :PostsProps) => {
     return (
         <PostsContainer>
             <h2>My Posts</h2>
@@ -12,9 +18,11 @@ export const Posts = () => {
                 <Button name='Send' style='send' onClick={() => alert('Send')} />
             </PostsControl>
             <PostsList>
-                <Post/>
-                <Post/>
-                <Post/>
+                {data.map((post: PostType) => {
+                    console.log(post);
+                    // return '1'
+                    return <Post post={post} key={post.id} />
+                })}
             </PostsList>
         </PostsContainer>
     );

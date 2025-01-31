@@ -4,14 +4,19 @@ import {Navbar} from "../Layout/Navbar/Navbar";
 import {Header} from "../Layout/Header/Header";
 
 import styled from "styled-components";
+import {PostType} from "../../App";
 
-export const HomePage = () => {
+type HomePageProps = {
+    data: PostType[]
+}
+
+export const HomePage = (props :HomePageProps) => {
     return (
         <Container>
             <Header/>
             <MainContainer>
                 <Navbar/>
-                <Profile/>
+                <Profile posts={props.data}/>
             </MainContainer>
         </Container>
     );
